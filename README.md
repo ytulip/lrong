@@ -1,2 +1,2 @@
-# lrong
-this is project is from lrong!
+#Lience
+You can free copy, use, but not for business!
