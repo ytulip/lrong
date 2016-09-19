@@ -29,3 +29,6 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+Route::controller('propagator','PropagatorController');
