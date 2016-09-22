@@ -31,6 +31,7 @@
             color:#e04141;
         }
     </style>
+    @versionfile('/js/plugin/LCalendar-master/src/css/LCalendar.css')
 </head><!--/head-->
 
 <body>
@@ -179,9 +180,14 @@
 <script type="text/javascript" src="/oxygen/js/lightbox.min.js"></script>
 @versionfile('/js/plugin/jquery.validate.js')
 @versionfile('/js/function.js')
+@versionfile('/js/plugin/LCalendar-master/src/js/LCalendar.js')
 <script type="text/javascript" src="/oxygen/js/main.js"></script>
 <script>
     $(function(){
+        /*日期插件*/
+
+
+
         $('#data-form').validate({
             rules: {
                 name: {

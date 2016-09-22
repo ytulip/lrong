@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\BelieverModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Request;
@@ -24,5 +25,12 @@ class PropagatorController extends Controller{
 
     public function getIndex(){
         return view('propagator.index');
+    }
+
+    public function postBeliever(){
+        $obj = BelieverModel::firstOrCreate(['name'=>Request::input('name')]);
+        $obj->setAttr(array_only(Request::all(),['sex','age','nativeplace','mobile','address','status']));
+        $obj->save();
+        return Response::json('');
     }
 }
