@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Response;
 
 class PropagatorController extends Controller{
 
+    use \App\Util\Auth;
+
     public function getLogin(){
         return view('propagator.login');
     }
@@ -28,6 +30,7 @@ class PropagatorController extends Controller{
     }
 
     public function postBeliever(){
+        $this->checkAuth();
         $obj = BelieverModel::firstOrCreate(['name'=>Request::input('name')]);
         $obj->setAttr(array_only(Request::all(),['sex','age','nativeplace','mobile','address','status']));
         $obj->save();
