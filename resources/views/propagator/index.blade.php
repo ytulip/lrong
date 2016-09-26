@@ -129,7 +129,7 @@
                             <input class="form-control grayborder" placeholder="布道者" name="propagator"/>
                         </div>
                         <div class="form-group">
-                            <input class="form-control grayborder" placeholder="是否信教" name="status"/>
+                            {!!\App\Util\Selects::yesOrNo('status')!!}
                         </div>
                         <div class="form-group">
                             <input class="form-control grayborder" placeholder="信教时间" name="time"/>
@@ -185,8 +185,12 @@
 <script>
     $(function(){
         /*日期插件*/
-
-
+        var calendar = new LCalendar();
+        calendar.init({
+            'trigger': 'input[name="time"]',//标签id
+            'type': 'date',//date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
+            'minDate':'1900-1-1',//最小日期 注意：该值会覆盖标签内定义的日期范围
+        });
 
         $('#data-form').validate({
             rules: {
