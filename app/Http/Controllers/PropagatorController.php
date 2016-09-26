@@ -31,6 +31,6 @@ class PropagatorController extends Controller{
         $obj = BelieverModel::firstOrCreate(['name'=>Request::input('name')]);
         $obj->setAttr(array_only(Request::all(),['sex','age','nativeplace','mobile','address','status']));
         $obj->save();
-        return Response::json('');
+        return Response::json(['status'=>true]);
     }
 }
